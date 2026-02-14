@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+/build/
+/spec-server
+/.idea/
+/.vscode/
+/test*
+/npm-debug.log
+/ts-code/protos/*.proto.*

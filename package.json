@@ -1,0 +1,52 @@
+{
+  "name": "ecma-nacl-cryptors",
+  "version": "1.0.1",
+  "description": "Single process and parallel cryptors of ecma-nacl type, JS and WASM implementations",
+  "main": "build/cryptors.js",
+  "types": "build/cryptors.d.ts",
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build-only-ts": "bash packing/protos-to-node-module.sh && tsc -p ts-code",
+    "build-wasm-cryptor": "bash packing/build-wasm-cryptor.sh",
+    "build": "npm run build-wasm-cryptor && npm run build-only-ts",
+    "test": "node build/tests/jasmine.js",
+    "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3nsoft/ecma-nacl-cryptors.git"
+  },
+  "keywords": [
+    "encryption",
+    "high-level",
+    "crypto",
+    "nacl",
+    "scrypt"
+  ],
+  "author": {
+    "name": "3NSoft Inc.",
+    "url": "https://3nsoft.com",
+    "email": "hq@3nsoft.com"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ecma-nacl": "^2.5.1",
+    "protobufjs": "^7.0.1",
+    "xsp-files": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^5.1.13",
+    "@types/node": "^22.13.14",
+    "@types/punycode": "^2.1.1",
+    "@types/ws": "^8.18.1",
+    "jasmine": "^5.13.0",
+    "protobufjs-cli": "^1.0.2",
+    "spec-3nweb-server": "^1.8.5",
+    "tsuml2": "^0.17.1",
+    "typescript": "^5.5.3"
+  }
+}
